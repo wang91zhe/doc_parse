@@ -56,7 +56,7 @@ def extract_pdf(
                 node_list.append(
                     {
                         "text": text,
-                        "text_rectangle": {"llx": x0, "lly": y0, "urx": x1, "ury": y1},
+                        "text_rectangle": {"llx": x0, "lly": height-y0, "urx": x1, "ury": height-y1},
                     }
                 )
         pdf_layout[page_index] = {
