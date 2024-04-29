@@ -43,7 +43,7 @@ def extract_pdf(
     )
     for layout in pages:
         page_index += 1
-        node_list = []
+        text_list = []
         row = 0
         height = layout.height
         width = layout.width
@@ -53,14 +53,14 @@ def extract_pdf(
                 text = element.get_text()
                 x0, y0 = element.x0, element.y0
                 x1, y1 = element.x1, element.y1
-                node_list.append(
+                text_list.append(
                     {
                         "text": text,
-                        "text_rectangle": {"llx": x0, "lly": height-y0, "urx": x1, "ury": height-y1},
+                        "position": {"llx": x0, "lly": height-y0, "urx": x1, "ury": height-y1},
                     }
                 )
         pdf_layout[page_index] = {
-            "text_list": node_list,
+            "text_list": text_list,
             "height": height,
             "width": width,
             "page": page_index,
