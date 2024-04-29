@@ -1,4 +1,4 @@
-# doc_parse
+# docminer
 可编辑文档解析
 
 ## 功能
@@ -11,4 +11,9 @@
 对以下开源的应用进行整合，开源的包如下:
 1. pdf2image
 2. pdfminer.six
+
+
+# Install
+pip install docminer
+
    
