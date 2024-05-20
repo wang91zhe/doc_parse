@@ -4,6 +4,7 @@ Create date:2024/4/20
 Description:
 """
 import os
+from typing import Tuple, Union
 
 from pdf2image import convert_from_bytes
 
@@ -11,11 +12,12 @@ from pdf2image import convert_from_bytes
 安装pdf2image包， 需要依赖poppler包
 https://github.com/wang91zhe/pdf2image/blob/master/README.md
 """
-def pdf_image(pdf_path: str = "", output_folder: str = ""):
+def pdf_image(pdf_path: str = "", output_folder: str = "", size: Union[Tuple, int] = None):
     """
     PDF转Image
     :param pdf_path: pdf路径
     :param output_folder: 图片保存路径
+    :param size: 图片大小
     :return:
     """
     page2image_path, page2image = {}, {}
